@@ -1,6 +1,5 @@
 public class ISBN10 {
 	public final static void main(String[] args) {
-		int x;
 		// überprüfen ob max 9stellig
 		while(args[0].length() > 9 ) {
 				System.out.print("Bitte nutze eine 9stellige Zahl: ");
