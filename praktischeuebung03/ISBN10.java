@@ -1,4 +1,4 @@
-public class ISBN10 {
+ppublic class ISBN10 {
 	public final static void main(String[] args) {
 		// überprüfen ob max 9stellig
 		while(args[0].length() > 9 ) {
@@ -13,13 +13,11 @@ public class ISBN10 {
 		System.out.println("gewichtete Quersumme " + weight_q);
 
 		// Itierte Alternierende Quersumme.
-		boolean value = true;
 		final String weight_string = String.valueOf(weight_q);
 		byte output = 0;
-		for(byte a = 0; a < weight_string.length(); a++) { // 1234 = 4 - 3 - 2 + 1
-			final int number = weight_string.charAt(a);
-			output += value ? number - 48 : ((number - 48) * (-1));
-			value = !value;
+		for(int i = weight_string.length(); i > 0; i--) { // 1234 = 4 - 3 - 2 + 1
+			final int number = weight_string.charAt(i - 1);
+			output += (i % 2 != 0) ? number - 48 : ((number - 48) * (-1));
 		}
 		// +11 Rechnen beim letzten
 		while(output < 0)
@@ -29,3 +27,4 @@ public class ISBN10 {
 		System.out.println("Die Prüfziffer ist " + output);
 	}
 }
+
