@@ -14,7 +14,7 @@ public class ISBN10 {
 
 		// Itierte Alternierende Quersumme.
 		boolean value = true;
-		String weight_string = String.valueOf(weight_q);
+		final String weight_string = String.valueOf(weight_q);
 		byte output = 0;
 		for(byte a = 0; a < weight_string.length(); a++) { // 1234 = 4 - 3 - 2 + 1
 			final int number = weight_string.charAt(a);
